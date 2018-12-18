@@ -5,72 +5,76 @@ $(document).ready(function() {
         var name = $("#name").val();
         var techPlacement = "TBD";
         var imgSrc = "https://media.giphy.com/media/22zgHX8aop488/giphy.gif";
-    
+      var q1Result = $("#question1").val();
+        
         var q2Result = $("#question2").val();
         var q3Result = $("#question3").val();
-        var totalScore;
+        var quest1score= quest1(q1Result);
+        var quest2score =quest2(q2Result);
+        var quest3score=quest3(q3Result);
+          var totalScore=(quest1score + quest2score + quest3score);
+        
+        $(".result").html(totalScore);
     });
 
 });
 
-function quest1(){
-    var q1Result = $("#question1").val();
-    if ( q1Result=== "happy") {
+function quest1(answer){
+    
+    if ( answer=== "happy") {
       return 4; 
        
     }
    
-       if ( q1Result=== "annoyed") {
+       if ( answer=== "annoyed") {
       return 3; 
        
     }
-        if ( q1Result=== "goofy") {
+        if ( answer=== "goofy") {
       return 2; 
        
     }
-       if ( q1Result=== "greedy") {
+       if ( answer=== "greedy") {
       return 1; 
        
     } 
 }
 
 
-function quest2(){
-            var q2Result = $("#question2").val();
-                if ( q2Result=== "Always") {
+function quest2(answer){
+                if ( answer=== "Always") {
       return 10; 
        
     }
    
-       if ( q2Result=== "Rarely") {
+       if ( answer=== "Rarely") {
       return 8; 
        
     }
-        if ( q2Result=== "Never") {
+        if ( answer=== "Never") {
       return 4; 
        
 }
 
 }
 
-function quest3(){
-                   if ( q3Result=== "Cooking") {
+function quest3(answer){
+                   if (answer=== "Cooking") {
       return 20; 
        
     }
    
-       if ( q3Result=== "Collecting money") {
+       if ( answer=== "Collecting money") {
       return 30; 
        
     }
-        if ( q3Result=== "listening to music") {
+        if ( answer=== "listening to music") {
       return 40; 
        
 }
-       if ( q3Result=== "Sleeping") {
+       if ( answer=== "Sleeping") {
       return 10; 
        
 }
 }
     
-}
